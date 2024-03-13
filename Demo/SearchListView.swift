@@ -7,20 +7,30 @@
 
 import SwiftUI
 
+enum Scopes{
+    case title,author
+}
+
 struct SearchListView: View {
     @Environment(ApplicationData.self) private var appData
      @State private var searchTerm:String = ""
+    @State private var searchScope:Scopes = .title
 
     var body: some View {
         NavigationStack{
-            List(appData.filteredItems) { book in
-                BookItem(book: book)
-            }.navigationTitle(Text("Books"))
+            SearchableView()
+                .navigationTitle(Text("Books"))
         }
         .searchable(text: $searchTerm,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("Insert title"))
+        .searchScopes($searchScope, scopes: {
+            Text("Title").tag(Scopes.title)
+            Text("Author").tag(Scopes.author)
+        })
         .onChange(of: searchTerm, initial: false){ old, value in
-            let search = value.trimmingCharacters(in: .whitespaces)
-            appData.filterValues(search: search)
+            performSearch()
+        }
+        .onChange(of: searchScope, initial: false){
+            performSearch()
         }
         .searchSuggestions({
             ForEach(appData.filteredItems){ book in
@@ -28,6 +38,29 @@ struct SearchListView: View {
                     .searchCompletion(book.title)
             }
         })
+    }
+    
+    func performSearch(){
+        let search = searchTerm.trimmingCharacters(in: .whitespaces)
+        appData.filterValues(search: search,scope:searchScope)
+    }
+}
+
+struct SearchableView:View {
+    @Environment(ApplicationData.self) private var appData
+    @Environment(\.isSearching) private var isSearching
+    @Environment(\.dismissSearch) private var dismissSearch
+    var body: some View {
+        List{
+            if isSearching {
+                Button("Dismiss"){
+                    dismissSearch()
+                }
+            }
+            ForEach(appData.filteredItems){book in
+                BookItem(book:book)
+            }
+        }
     }
 }
 
