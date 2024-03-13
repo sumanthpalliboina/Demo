@@ -12,6 +12,8 @@
 		18383B172B8A868C000CBC26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18383B162B8A868C000CBC26 /* Assets.xcassets */; };
 		18383B1B2B8A868C000CBC26 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18383B1A2B8A868C000CBC26 /* Preview Assets.xcassets */; };
 		183C9B942B93432B006A6869 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C9B932B93432B006A6869 /* SampleView.swift */; };
+		18415AF82BA1894F000EDC58 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18415AF72BA1894F000EDC58 /* ApplicationData.swift */; };
+		18415AFA2BA18FEB000EDC58 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18415AF92BA18FEB000EDC58 /* SearchListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		18383B182B8A868C000CBC26 /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		18383B1A2B8A868C000CBC26 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		183C9B932B93432B006A6869 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		18415AF72BA1894F000EDC58 /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
+		18415AF92BA18FEB000EDC58 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				18383B122B8A8689000CBC26 /* DemoApp.swift */,
 				18383B142B8A8689000CBC26 /* ContentView.swift */,
+				18415AF92BA18FEB000EDC58 /* SearchListView.swift */,
+				18415AF72BA1894F000EDC58 /* ApplicationData.swift */,
 				183C9B932B93432B006A6869 /* SampleView.swift */,
 				18383B162B8A868C000CBC26 /* Assets.xcassets */,
 				18383B182B8A868C000CBC26 /* Demo.entitlements */,
@@ -144,7 +150,9 @@
 			files = (
 				18383B152B8A8689000CBC26 /* ContentView.swift in Sources */,
 				183C9B942B93432B006A6869 /* SampleView.swift in Sources */,
+				18415AF82BA1894F000EDC58 /* ApplicationData.swift in Sources */,
 				18383B132B8A8689000CBC26 /* DemoApp.swift in Sources */,
+				18415AFA2BA18FEB000EDC58 /* SearchListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

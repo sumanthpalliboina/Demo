@@ -161,15 +161,16 @@ struct EnvironmentChange : View{
 //    }
 //}
 
-struct ContentView : View {
-    var body: some View {
-        NavigationStack{
-            Text("Hello")
-        }
-    }
+struct ContentView: View {
+
+   var body: some View {
+       SearchListView()
+   }
 }
+
 
 #Preview("My Iphone 15 pro") {
     ContentView()
+        .environment(ApplicationData())
 }
 
