@@ -38,7 +38,7 @@ struct SearchListView: View {
                     }
                     ToolbarItem(placement:.navigationBarTrailing){
                         Button(action: {
-                            inspectorPresented = true
+                            inspectorPresented.toggle()
                         }, label: {
                             Image(systemName: "person.circle")
                         })

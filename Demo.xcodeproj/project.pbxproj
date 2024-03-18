@@ -18,6 +18,7 @@
 		1897FE232BA7FF9D00893D8E /* DetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897FE222BA7FF9D00893D8E /* DetailedView.swift */; };
 		1897FE252BA8042600893D8E /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897FE242BA8042600893D8E /* AddBookView.swift */; };
 		1897FE272BA81A6C00893D8E /* InspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897FE262BA81A6C00893D8E /* InspectorView.swift */; };
+		1897FE292BA828EA00893D8E /* PopOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897FE282BA828EA00893D8E /* PopOverView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		1897FE222BA7FF9D00893D8E /* DetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedView.swift; sourceTree = "<group>"; };
 		1897FE242BA8042600893D8E /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		1897FE262BA81A6C00893D8E /* InspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectorView.swift; sourceTree = "<group>"; };
+		1897FE282BA828EA00893D8E /* PopOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopOverView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		18383B062B8A8689000CBC26 = {
 			isa = PBXGroup;
 			children = (
+				1897FE282BA828EA00893D8E /* PopOverView.swift */,
 				18383B112B8A8689000CBC26 /* Demo */,
 				18383B102B8A8689000CBC26 /* Products */,
 			);
@@ -164,6 +167,7 @@
 				183C9B942B93432B006A6869 /* SampleView.swift in Sources */,
 				18415AF82BA1894F000EDC58 /* ApplicationData.swift in Sources */,
 				1897FE272BA81A6C00893D8E /* InspectorView.swift in Sources */,
+				1897FE292BA828EA00893D8E /* PopOverView.swift in Sources */,
 				1897FE252BA8042600893D8E /* AddBookView.swift in Sources */,
 				1897FE212BA7FB6500893D8E /* SettingsView.swift in Sources */,
 				1897FE232BA7FF9D00893D8E /* DetailedView.swift in Sources */,

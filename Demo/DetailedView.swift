@@ -10,6 +10,8 @@ import SwiftUI
 struct DetailedView: View {
     @Environment(ApplicationData.self) private var appData
     @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismissWindow
+    @State private var popOver:Bool = false
     var book:Book
     
     var body: some View {
@@ -19,6 +21,12 @@ struct DetailedView: View {
             Image("IosImage")
                 .resizable()
                 .scaledToFit()
+                .onTapGesture {
+                    popOver = true
+                }
+                .popover(isPresented: $popOver,arrowEdge: .trailing){
+                    PopOverView()
+                }
         }.navigationTitle(Text("Book"))
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden()
