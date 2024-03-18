@@ -14,6 +14,7 @@
 		183C9B942B93432B006A6869 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183C9B932B93432B006A6869 /* SampleView.swift */; };
 		18415AF82BA1894F000EDC58 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18415AF72BA1894F000EDC58 /* ApplicationData.swift */; };
 		18415AFA2BA18FEB000EDC58 /* SearchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18415AF92BA18FEB000EDC58 /* SearchListView.swift */; };
+		1897FE212BA7FB6500893D8E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897FE202BA7FB6500893D8E /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		183C9B932B93432B006A6869 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		18415AF72BA1894F000EDC58 /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 		18415AF92BA18FEB000EDC58 /* SearchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListView.swift; sourceTree = "<group>"; };
+		1897FE202BA7FB6500893D8E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				18383B122B8A8689000CBC26 /* DemoApp.swift */,
 				18383B142B8A8689000CBC26 /* ContentView.swift */,
+				1897FE202BA7FB6500893D8E /* SettingsView.swift */,
 				18415AF92BA18FEB000EDC58 /* SearchListView.swift */,
 				18415AF72BA1894F000EDC58 /* ApplicationData.swift */,
 				183C9B932B93432B006A6869 /* SampleView.swift */,
@@ -151,6 +154,7 @@
 				18383B152B8A8689000CBC26 /* ContentView.swift in Sources */,
 				183C9B942B93432B006A6869 /* SampleView.swift in Sources */,
 				18415AF82BA1894F000EDC58 /* ApplicationData.swift in Sources */,
+				1897FE212BA7FB6500893D8E /* SettingsView.swift in Sources */,
 				18383B132B8A8689000CBC26 /* DemoApp.swift in Sources */,
 				18415AFA2BA18FEB000EDC58 /* SearchListView.swift in Sources */,
 			);

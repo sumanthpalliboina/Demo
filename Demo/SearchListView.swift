@@ -20,6 +20,13 @@ struct SearchListView: View {
         NavigationStack{
             SearchableView()
                 .navigationTitle(Text("Books"))
+                .toolbar{
+                    ToolbarItem(placement:.navigationBarTrailing){
+                        NavigationLink(destination: SettingsView(), label: {
+                            Image(systemName: "gearshape")
+                        })
+                    }
+                }
         }
         .searchable(text: $searchTerm,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("Insert title"))
         .searchScopes($searchScope, scopes: {

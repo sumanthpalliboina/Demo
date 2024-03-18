@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State private var showPictures:Bool = false
+    @State private var showYear:Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form{
+            Toggle("Show pictures",isOn: $showPictures)
+            Toggle("Show Year",isOn: $showYear)
+        }.navigationTitle("Settings")
     }
 }
 
 #Preview {
-    SettingsView()
+    NavigationStack{
+        SettingsView()
+    }
 }
