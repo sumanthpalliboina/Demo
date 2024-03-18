@@ -15,10 +15,12 @@ struct SearchListView: View {
     @Environment(ApplicationData.self) private var appData
      @State private var searchTerm:String = ""
     @State private var searchScope:Scopes = .title
+    @State private var showSheet : Bool = false
+    @State private var editItem : Book?
 
     var body: some View {
         NavigationStack{
-            SearchableView()
+            SearchableView(editItem: $editItem)
                 .navigationTitle(Text("Books"))
                 .toolbar{
                     ToolbarItem(placement:.navigationBarTrailing){
@@ -26,6 +28,25 @@ struct SearchListView: View {
                             Image(systemName: "gearshape")
                         })
                     }
+                    ToolbarItem(placement:.navigationBarTrailing){
+                        Button(action: {
+                            showSheet = true
+                        }, label: {
+                            Image(systemName: "book")
+                        })
+                    }
+                }
+                .sheet(isPresented:$showSheet){
+                    AddBookView()
+                        .interactiveDismissDisabled(true)
+                        .presentationDetents([.height(350)])
+                        .presentationBackground(.ultraThinMaterial)
+                }
+                .sheet(item: $editItem){ item in
+                    AddBookView(book:item)
+                        .interactiveDismissDisabled(true)
+                        //.presentationDetents([.height(350)])
+                        //.presentationBackground(.ultraThinMaterial)
                 }
         }
         .searchable(text: $searchTerm,placement: .navigationBarDrawer(displayMode: .always),prompt: Text("Insert title"))
@@ -57,6 +78,7 @@ struct SearchableView:View {
     @Environment(ApplicationData.self) private var appData
     @Environment(\.isSearching) private var isSearching
     @Environment(\.dismissSearch) private var dismissSearch
+    @Binding var editItem : Book?
     var body: some View {
         List{
             if isSearching {
@@ -68,7 +90,7 @@ struct SearchableView:View {
                 NavigationLink(destination: {
                     DetailedView(book: book)
                 }, label: {
-                    BookItem(book:book)
+                    BookItem(editItem: $editItem,book:book)
                 })
             }
         }
@@ -76,7 +98,8 @@ struct SearchableView:View {
 }
 
 struct BookItem: View {
-   let book: Book
+    @Binding var editItem : Book?
+    let book: Book
 
    var body: some View {
       HStack(alignment: .top) {
@@ -84,6 +107,9 @@ struct BookItem: View {
             .resizable()
             .scaledToFit()
             .frame(width: 80, height: 100)
+            .onTapGesture {
+                editItem = book
+            }
          VStack(alignment: .leading, spacing: 2) {
             Text(book.title).bold()
             Text(book.author)
