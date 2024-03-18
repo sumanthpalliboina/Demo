@@ -65,7 +65,11 @@ struct SearchableView:View {
                 }
             }
             ForEach(appData.filteredItems){book in
-                BookItem(book:book)
+                NavigationLink(destination: {
+                    DetailedView(book: book)
+                }, label: {
+                    BookItem(book:book)
+                })
             }
         }
     }
