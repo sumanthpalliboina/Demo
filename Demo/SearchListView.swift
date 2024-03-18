@@ -16,6 +16,7 @@ struct SearchListView: View {
      @State private var searchTerm:String = ""
     @State private var searchScope:Scopes = .title
     @State private var showSheet : Bool = false
+    @State private var inspectorPresented : Bool = false
     @State private var editItem : Book?
 
     var body: some View {
@@ -35,12 +36,22 @@ struct SearchListView: View {
                             Image(systemName: "book")
                         })
                     }
+                    ToolbarItem(placement:.navigationBarTrailing){
+                        Button(action: {
+                            inspectorPresented = true
+                        }, label: {
+                            Image(systemName: "person.circle")
+                        })
+                    }
                 }
                 .sheet(isPresented:$showSheet){
                     AddBookView()
                         .interactiveDismissDisabled(true)
                         .presentationDetents([.height(350)])
                         .presentationBackground(.ultraThinMaterial)
+                }
+                .inspector(isPresented: $inspectorPresented){
+                    InspectorView()
                 }
                 .sheet(item: $editItem){ item in
                     AddBookView(book:item)
