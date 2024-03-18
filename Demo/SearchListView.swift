@@ -103,6 +103,8 @@ struct SearchableView:View {
                 }, label: {
                     BookItem(editItem: $editItem,book:book)
                 })
+            }.onDelete{_ in 
+                ///
             }
         }
     }
