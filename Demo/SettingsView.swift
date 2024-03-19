@@ -17,7 +17,7 @@ struct SettingsView: View {
             Section(header:Text("Settings"),footer:Text("Select what you want to see")){
                 Toggle("Show pictures",isOn: Bindable(appData).showPictures)
                 Toggle("Show Year",isOn: Bindable(appData).showYear)
-            }
+            }.headerProminence(.increased)
         }.navigationTitle("Settings")
             .navigationBarBackButtonHidden()
             .toolbar{

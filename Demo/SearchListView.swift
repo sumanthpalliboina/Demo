@@ -97,14 +97,19 @@ struct SearchableView:View {
                     dismissSearch()
                 }
             }
-            ForEach(appData.filteredItems){book in
-                NavigationLink(destination: {
-                    DetailedView(book: book)
-                }, label: {
-                    BookItem(editItem: $editItem,book:book)
-                })
-            }.onDelete{_ in 
-                ///
+            if appData.filteredItems.isEmpty {
+                EmptyBooksView()
+                    .frame(height:500)
+            }else{
+                ForEach(appData.filteredItems){book in
+                    NavigationLink(destination: {
+                        DetailedView(book: book)
+                    }, label: {
+                        BookItem(editItem: $editItem,book:book)
+                    })
+                }.onDelete{_ in
+                    ///
+                }
             }
         }
     }
