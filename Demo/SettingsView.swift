@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @Environment(ApplicationData.self) private var appData
     @Environment(\.dismiss) var dismiss
     @State private var showPictures:Bool = false
     @State private var showYear:Bool = false
     var body: some View {
         Form{
-            Toggle("Show pictures",isOn: $showPictures)
-            Toggle("Show Year",isOn: $showYear)
+            Section(header:Text("Settings"),footer:Text("Select what you want to see")){
+                Toggle("Show pictures",isOn: Bindable(appData).showPictures)
+                Toggle("Show Year",isOn: Bindable(appData).showYear)
+            }
         }.navigationTitle("Settings")
             .navigationBarBackButtonHidden()
             .toolbar{
@@ -30,5 +33,6 @@ struct SettingsView: View {
 #Preview {
     NavigationStack{
         SettingsView()
+            .environment(ApplicationData())
     }
 }

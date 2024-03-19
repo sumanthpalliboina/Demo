@@ -22,9 +22,13 @@ struct Book: Identifiable, Hashable {
         }
     }
     
+    var showPictures:Bool = true
+    var showYear:Bool = true
+    
     var filteredItems : [Book] = []
     
     func filterValues(search:String,scope:Scopes = .title){
+        print("sorted")
         if search.isEmpty {
             filteredItems = userData.sorted(by: {$0.title < $1.title})
         }else{
